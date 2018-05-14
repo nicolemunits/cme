@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CME Application</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script src="/Excel/FileSaver.js"></script>
+        <script src="/Excel/jszip.js"></script>
+        <script src="/Excel/myexcel.js"></script>
+
+
+
+
+
+<!-- TODO MORIS -->
+<script>
+    var date = new Date(); // DD/MM/YYYY HH:MM:SS
+    //var dateStamp = date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+    
+    totalVid=0; //todo: need add this parameter
+</script>
+
+
+
+
+
+<script>
+	function playAudioAgain(){
+			MyAudio = document.getElementById("audio");
+			MyAudio.currentTime=0;
+			MyAudio.play();
+			 setTimeout(function(){
+               MyAudio.pause()
+                }, MyAudio.duration*1000);
+		}
+		function playVidAgain(){
+			  document.getElementById("button").className = "hidden";
+                DisableTheAllButtons();
+                vid.className="fullscreen-bg__video";
+                MyImage.className="hidden";
+                MyAudio.play();
+                vid.play();
+			 setTimeout(function(){
+                vid.className="hidden";
+                MyImage.className="fullscreen-bg__video";
+                document.getElementById("button").className = "btn btn-primary btn-lg";
+                EnableTheAllButtons();
+                }, vid.duration*1000);
+		}
+
+
+    function initAreas(){
+        var timeStamp = new Date().getTime(); //todo:
+        localStorage.setItem("startTime", timeStamp);//todo:
+        for(var i=1;i<97;i++)
+            localStorage.setItem("btn"+i, 0);
+        
+        localStorage.setItem("btn 1", "fireman 1 area 1");
+        localStorage.setItem("btn 2", "fireman 1 area 2");
+        localStorage.setItem("btn 3", "fireman 1 area 3");
+        localStorage.setItem("btn 4", "fireman 1 area 4");	
+        localStorage.setItem("btn 5", "fireman 1 area 5");
+        localStorage.setItem("btn 6", "fireman 1 area 6");	
+        localStorage.setItem("btn 7", "fireman 1 area face");	
+        localStorage.setItem("btn 8", "fireman 1 area eyes");
+        localStorage.setItem("btn 9", "fireman 2 area 1");
+        localStorage.setItem("btn 10", "fireman 2 area 2");
+        localStorage.setItem("btn 11", "fireman 2 area 3");
+        localStorage.setItem("btn 12", "fireman 2 area 4");	
+        localStorage.setItem("btn 13", "fireman 2 area 5");
+        localStorage.setItem("btn 14", "fireman 2 area 6");	
+        localStorage.setItem("btn 15", "fireman 2 area face");	
+        localStorage.setItem("btn 16", "fireman 2 area eyes");
+        localStorage.setItem("btn 17", "fireman 3 area 1");
+        localStorage.setItem("btn 18", "fireman 3 area 2");
+        localStorage.setItem("btn 19", "fireman 3 area 3");
+        localStorage.setItem("btn 20", "fireman 3 area 4");	
+        localStorage.setItem("btn 21", "fireman 3 area 5");
+        localStorage.setItem("btn 22", "fireman 3 area 6");	
+        localStorage.setItem("btn 23", "fireman 3 area face");	
+        localStorage.setItem("btn 24", "fireman 3 area eyes");
+        localStorage.setItem("btn 25", "superman 1 area 1");
+        localStorage.setItem("btn 26", "superman 1 area 2");
+        localStorage.setItem("btn 27", "superman 1 area 3");
+        localStorage.setItem("btn 28", "superman 1 area 4");	
+        localStorage.setItem("btn 29", "superman 1 area 5");
+        localStorage.setItem("btn 30", "superman 1 area 6");	
+        localStorage.setItem("btn 31", "superman 1 area face");	
+        localStorage.setItem("btn 32", "superman 1 area eyes");
+        localStorage.setItem("btn 33", "superman 2 area 1");
+        localStorage.setItem("btn 34", "superman 2 area 2");
+        localStorage.setItem("btn 35", "superman 2 area 3");
+        localStorage.setItem("btn 36", "superman 2 area 4");	
+        localStorage.setItem("btn 37", "superman 2 area 5");
+        localStorage.setItem("btn 38", "superman 2 area 6");	
+        localStorage.setItem("btn 39", "superman 2 area face");	
+        localStorage.setItem("btn 40", "superman 2 area eyes");
+        localStorage.setItem("btn 41", "superman 3 area 1");
+        localStorage.setItem("btn 42", "superman 3 area 2");
+        localStorage.setItem("btn 43", "superman 3 area 3");
+        localStorage.setItem("btn 44", "superman 3 area 4");	
+        localStorage.setItem("btn 45", "superman 3 area 5");
+        localStorage.setItem("btn 46", "superman 3 area 6");	
+        localStorage.setItem("btn 47", "superman 3 area face");	
+        localStorage.setItem("btn 48", "superman 3 area eyes");
+        
+        localStorage.setItem("btn 49", "farman 1 area 1");
+        localStorage.setItem("btn 50", "farman 1 area 2");
+        localStorage.setItem("btn 51", "farman 1 area 3");
+        localStorage.setItem("btn 52", "farman 1 area 4");	
+        localStorage.setItem("btn 53", "farman 1 area 5");
+        localStorage.setItem("btn 54", "farman 1 area 6");	
+        localStorage.setItem("btn 55", "farman 1 area face");	
+        localStorage.setItem("btn 56", "farman 1 area eyes");
+        
+        localStorage.setItem("btn 57", "farman 2 area 1");
+        localStorage.setItem("btn 58", "farman 2 area 2");
+        localStorage.setItem("btn 59", "farman 2 area 3");
+        localStorage.setItem("btn 60", "farman 2 area 4");	
+        localStorage.setItem("btn 61", "farman 2 area 5");
+        localStorage.setItem("btn 62", "farman 2 area 6");	
+        localStorage.setItem("btn 63", "farman 2 area face");	
+        localStorage.setItem("btn 64", "farman 2 area eyes");
+        localStorage.setItem("btn 65", "farman 3 area 1");
+        localStorage.setItem("btn 66", "farman 3 area 2");
+        localStorage.setItem("btn 67", "farman 3 area 3");
+        localStorage.setItem("btn 68", "farman 3 area 4");	
+        localStorage.setItem("btn 69", "farman 3 area 5");
+        localStorage.setItem("btn 70", "farman 3 area 6");	
+        localStorage.setItem("btn 71", "farman 3 area face");	
+        localStorage.setItem("btn 72", "farman 3 area eyes");
+ 
+        localStorage.setItem("btn 73", "basketball 1 area 1");
+        localStorage.setItem("btn 74", "basketball 1 area 2");
+        localStorage.setItem("btn 75", "basketball 1 area 3");
+        localStorage.setItem("btn 76", "basketball 1 area 4");	
+        localStorage.setItem("btn 77", "basketball 1 area 5");
+        localStorage.setItem("btn 78", "basketball 1 area 6");	
+        localStorage.setItem("btn 79", "basketball 1 area face");	
+        localStorage.setItem("btn 80", "basketball 1 area eyes");
+        localStorage.setItem("btn 81", "basketball 2 area 1");
+        localStorage.setItem("btn 82", "basketball 2 area 2");
+        localStorage.setItem("btn 83", "basketball 2 area 3");
+        localStorage.setItem("btn 84", "basketball 2 area 4");	
+        localStorage.setItem("btn 85", "basketball 2 area 5");
+        localStorage.setItem("btn 86", "basketball 2 area 6");	
+        localStorage.setItem("btn 87", "basketball 2 area face");	
+        localStorage.setItem("btn 88", "basketball 2 area eyes");
+        localStorage.setItem("btn 89", "basketball 3 area 1");
+        localStorage.setItem("btn 90", "basketball 3 area 2");
+        localStorage.setItem("btn 91", "basketball 3 area 3");
+        localStorage.setItem("btn 92", "basketball 3 area 4");	
+        localStorage.setItem("btn 93", "basketball 3 area 5");
+        localStorage.setItem("btn 94", "basketball 3 area 6");	
+        localStorage.setItem("btn 95", "basketball 3 area face");	
+        localStorage.setItem("btn 96", "basketball 3 area eyes");
+    }
+	function Click(id){
+		var temp = localStorage.getItem(id);
+		if(temp == "NaN")
+			temp = 0;
+		var newValue = parseInt(temp)+1;
+		localStorage.setItem(id, newValue);
+  }
+window.onload = function(e){
+    initAreas();
+}
+
+window.onload = function(e){
+var MyAudio = document.getElementById("audio");
+document.getElementById("button").className = "hidden";
+MyAudio.src="/Voice_Memos/Farmer/Farmer5.wav"; //9 seconds
+MyAudio.play();
+setTimeout(function(){
+MyAudio.src="/Voice_Memos/Farmer/Farmer6.wav"; //7 seconds
+MyAudio.play();
+}, 10000);
+setTimeout(function(){
+MyAudio.src="/Voice_Memos/Farmer/Farmer7.wav"; //9 seconds
+MyAudio.play();
+}, 18000);
+setTimeout(function(){
+document.getElementById("button").className = "btn btn-primary btn-lg";
+}, 28000);
+}
+</script>
+
+
+
+<!-- TODO MORIS -->
+
+<script>
+    //todo: need tae all function about excel!
+function randomDate(start, end) {
+var d= new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+return d;
+}
+</script>
+
+
+<!-- TODO MORIS -->
+
+<script>
+    //todo: need tae all function about excel!
+
+function Excel(ex, key, count){
+var excel = ex;// Default font
+// excel.set is the main function to generate content:
+// We can use parameter notation excel.set(sheetValue,columnValue,rowValue,cellValue,styleValue) 
+// Or object notation excel.set({sheet:sheetValue,column:columnValue,row:rowValue,value:cellValue,style:styleValue })
+// null or 0 are used as default values for undefined entries		
+excel.set( {sheet:0,value:"This is Sheet 1" } );
+var evenRow=excel.addStyle ( { 	// Style for even ROWS
+    border: "none,none,none,thin #333333"});// Borders are LEFT,RIGHT,TOP,BOTTOM. Check $JExcel.borderStyles for a list of valid border styles
+var oddRow=excel.addStyle ( { // Style for odd ROWS
+    fill: "#ECECEC" , // Background color, plain #RRGGBB, there is a helper $JExcel.rgbToHex(r,g,b)
+    border: "none,none,none,thin #333333"}); 
+var headers=["איזור","מספר פעמים","תמונה","זמן הסתכלות כולל (בשניות)","אחוזים מסך הזמן"];// This array holds the HEADERS text
+var formatHeader=excel.addStyle ( { // Format for headers
+        border: "none,none,none,thin #333333", //Border for header
+        font: "Calibri 12 #0000AA B"}); //Font for headers
+for (var i=0;i<headers.length;i++){	// Loop all the haders
+    excel.set(0,i,0,headers[i],formatHeader);// Set CELL with header text, using header format
+    excel.set(0,i,undefined,"auto");// Set COLUMN width to auto (according to the standard this is only valid for numeric columns)
+}
+    //todo: need tae all function about excel!
+
+// Now let's write some data
+var initDate = new Date(2000, 0, 1);
+var endDate = new Date(2016, 0, 1);
+var dateStyle = excel.addStyle ( { // Format for date cells
+        align: "R",	// aligned to the RIGHT
+        format: "yyyy.mm.dd hh:mm:ss", // using DATE mask, Check $JExcel.formats for built-in formats or provide your own 
+        font: "#00AA00"});//in color green
+    //todo: need tae all function about excel!
+
+var x = new Date();
+myVar = x.toString();
+
+            var loc = window.location.pathname;
+            var dir = loc.substring(0, loc.lastIndexOf('/'));
+            var currentDirectory = window.location.pathname.split('/').slice(0, -1).join('/')
+            var finalDirectory = "file://"+currentDirectory;
+            var local = "file://C:/Users/Public/Pictures"
+
+
+        var amountOfSeconds = 0;
+        var totalSeconds = localStorage.getItem("stopTime") - localStorage.getItem("startTime");
+        totalSeconds /= 1000;
+        var i;
+        var endIndex=0;
+        var k=1;
+        for (i = 1; i < localStorage.length / 2; i++) {
+            if(localStorage.getItem("btn"+i)>0) {
+                endIndex++;
+                var areaName = localStorage.getItem("btn "+i);// we will fill the 50 rows
+                excel.set(0,0,k,areaName);	// This column is a TEXT
+                var d=randomDate(initDate,endDate);
+                // Get a random date
+                excel.set(0,1,k, localStorage.getItem("btn"+i));// Store the random date as STRING
+                excel.set(0,2,k,local+"/btn"+i);
+                amountOfSeconds += localStorage.getItem("btn"+i)*2; // saves the total amount of seconds
+                excel.set(0,3,k,localStorage.getItem("btn"+i)*2);// Store the previous random date as a NUMERIC,  display using dateStyle format
+                excel.set(0,4,k, parseFloat(((localStorage.getItem("btn"+i)*2)/totalSeconds*100).toString()).toFixed(2) + "%");// Store the previous random date as a NUMERIC,  display using dateStyle format
+                excel.set(0,5,k,"",dateStyle);// Store the previous random date as a NUMERIC,  display using dateStyle format
+                k++;
+                //excel.set(0,4,i,"Some other text");
+            } // Some other text
+        }
+
+           //todo: need tae all function about excel!
+
+        excel.set(0,5,1,"זמן ריצה כולל (שניות)");
+        excel.set(0,6,1,totalSeconds);
+        
+        excel.set(0,0,k,"זמן שוטטות");
+        excel.set(0,1,k,"-");
+        excel.set(0,2,k,"-");
+        var time = totalSeconds-amountOfSeconds-totalVid;
+        excel.set(0,3,k,time.toString());
+        excel.set(0,4,k, parseFloat((time/totalSeconds*100).toString()).toFixed(2) + "%");
+
+        excel.set(0,0,k+1,"זמן וידאו");
+        excel.set(0,1,k+1,"-");
+        excel.set(0,2,k+1,"-");
+        excel.set(0,1,k+1,totalVid.toString());
+        excel.set(0,4,k+1, parseFloat((totalVid/totalSeconds*100).toString()).toFixed(2) + "%");
+
+//todo: thats all excel need to take!
+
+
+}
+
+//todo: need take and edit the calc function
+
+function Calc(){
+var timeStamp = new Date().getTime();
+localStorage.setItem("stopTime",timeStamp);
+var excel = $JExcel.new("Calibri light 10 #333333");
+Excel(excel);
+excel.generate("SampleData.xlsx");
+initAreas(); //clear local storage and init values and areas
+}
+
+</script>
+
+
+ <style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg { 
+min-height: 100%;
+background-position: center;
+background-size: cover; 
+}
+a:hover {
+ /* font-family: Ariel; */
+color:rgb(187, 221, 231);
+}
+            
+.clickme, .clickme:hover, .clickme:active, .clickme:target, .clickme:focus, .clickme:visited{
+position:absolute;
+margin: 100px 0px 0px 60px;
+padding:10px 50px;
+background-color: Transparent;
+background-repeat:no-repeat;
+border: none;
+cursor:pointer;
+overflow: hidden;
+color: transparent;
+outline:none;
+}
+.clickme{
+ position: absolute;
+ margin: 100px 0px 0px 60px;
+ padding:10px 50px;
+width: 120px;
+height: 40px;
+background-color: Transparent;
+background-repeat:no-repeat;
+border: none;
+cursor:pointer;
+overflow: hidden;
+color: transparent;
+outline:none;
+}
+.fullscreen-bg {
+position: fixed;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+overflow: hidden;
+z-index: -100;
+}
+.fullscreen-bg__video {
+position: relative;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+button.btn.btn-primary.btn-lg {
+position: absolute;
+z-index: 9999999;
+left: 20%;
+top: 45%;
+width: 124px;
+height: 51px;
+background: transparent;
+border: transparent;
+}
+.main-title{
+position: absolute;
+text-decoration: none;
+font-size: 40px;
+z-index: 99999;
+width: 164px;
+}
+.nopadding {
+padding: 0 !important;
+margin: 0 !important;
+}
+.btn-warning {
+    color: #fff;
+    background-color: transparent;
+    border-color: #eea236;
+}
+.btn-success {
+color: #fff;
+background-color: transparent;
+border-color: #4cae4c;
+}
+button#btn7 {
+background: transparent;
+border: transparent;
+left: 18%;
+height: 24%;
+/* display: inline; */
+width: 15%;
+top: 35%;
+z-index: 99999;
+}
+
+
+/* TODO */
+.fullscreen-bg__video button{
+            outline: 0;
+        }
+        /* TODO */
+        html, body {
+            margin: 0; 
+            height: 100%; 
+            overflow: hidden
+        }
+
+</style>
+    </head>
+	<body>
+    <!-- <audio id  ="audio" style="display:none;" src="/Voice_Memos/Farmer/Farmer1.wav"> </audio> -->
+
+    <button onclick="Calc()">הפסק פעילות</button>
+		 <button onclick="playVidAgain()">הפעל נגן</button>
+	  <button onclick="playAudioAgain()">השמעה שנית</button>
+
+    <a href="/game/levels/boys/farman"> <!--prev-->
+    <img border="0" src="/else/prev.png" class="prev-button" style="text-decoration:none;width:40px; height:40px">
+    </a>
+
+    <a href="/game/levels/boys/farman/farman2/farman3"> <!--next-->
+    <img border="0" src="/else/next.png" class="next-button" style="text-decoration:none;width:40px; height:40px">
+    </a>
+
+    <a href="/"> <!--home button-->
+    <img border="0" src="/else/home.png" class="main-title" style="text-decoration:none;width:40px; height:40px">
+    </a>
+
+     <!-- TODO: adding audio -->
+     <audio id="audio" controls autoplay class="w3-right">
+            <source src="/Voice_Memos/Farmer/Farman5.wav" type="audio/wav">
+            Your browser does not support the audio element.
+        </audio>
+
+    <div class=" bgimg w3-display-container w3-animate-opacity w3-text-white">
+    <div class="w3-display-topleft w3-padding-large w3-xlarge">
+
+    <!--<a href="/"  class="main-title" style="text-decoration:none;font-size: 40px;">CME</a>-->
+    </div>
+
+    <div class="w3-right" .w3-display-topleftstyle="padding-top:80px;" >
+    <!-- <button type="button" class="btn btn-primary btn-lg" onclick="playVid()">
+                    
+    </button> -->
+    </div>   
+    <div class="w3-center">    
+    <div class="row">
+    <!-- <div class="col-md-3" style="padding-top:300px;padding-left:50px;">
+    </div> -->
+    <div class="fullscreen-bg__video">				
+	<div style="
+    position: absolute;
+    width: 100%;
+    height: 100%;
+">
+	<div class="row" style="
+    position: relative;
+    z-index: 9999;
+    height: 50%;
+">
+	<div class="col-md-4 nopadding" style="
+    float: left;
+    width: 33%;
+    height: 100%;
+">
+	<button type="button" id="btn1" onclick="Click(id);" class=" btn-cover" ng-click="Cancel()" aria-haspopup="true" aria-expanded="false" style="width: 100%;height: 100%;border: none;"><font size="6"></font></button>
+	</div>
+	<div class="col-md-4 nopadding" style="
+    float: left;
+    width: 33%;
+    height: 100%;
+">
+	<button type="button" id="btn2" onclick="Click(id);" class="btn-cover" ng-click="Proceed()" aria-haspopup="true" aria-expanded="false" style="width:100%;height: 100%;border: none;"><font size="6"></font></button>
+	</div>
+	<div class="col-md-4 nopadding" style="
+    float: left;
+    height: 100%;
+    width: 33%;
+">
+	<button type="button" id="btn3" onclick="Click(id);" class="btn-cover" ng-click="Proceed()" aria-haspopup="true" aria-expanded="false" style="width:100%;height: 100%;border: none;"><font size="6"></font></button>
+	</div>
+	</div>
+	<div class="row" style="
+    position: absolute;
+    z-index: 999;
+    height: 50%;
+    width: 100%;
+">
+	<div class="col-md-4 nopadding" style="
+    /* float: left; */
+    /* width: 33%; */
+    float: left;
+    width: 33.3%;
+    height: 100%;
+">
+	<button type="button" id="btn4" onclick="Click(id);" class="btn-cover" ng-click="Cancel()" aria-haspopup="true" aria-expanded="false" style="width:100%;height: 100%;border: none;"><font size="6"></font></button>
+	</div>
+	<div class="col-md-4 nopadding" style="
+    /* float: left; */
+    /* width: 33%; */
+    float: left;
+    width: 33.3%;
+    height: 100%;
+">
+	<button type="button" id="btn5" onclick="Click(id);" class="btn-cover" ng-click="Proceed()" aria-haspopup="true" aria-expanded="false" style="width:100%;height: 100%;border: none;"><font size="6"></font></button>
+	</div>
+	<div class="col-md-4 nopadding" style="
+    float: left;
+    width: 33.3%;
+    height: 100%;
+">
+	<button type="button" id="btn6" onclick="Click(id);" class="btn-cover" ng-click="Proceed()" aria-haspopup="true" aria-expanded="false" style="width:100%;height: 100%;border: none;"><font size="6"></font></button>
+	</div>
+					 
+	</div> 
+</div>
+					
+					
+    <button id="btn7" onclick="Click(id);" type="button" class="btn btn-primary btn-lg" >
+
+    </button>
+    <button id="button" onclick="playVid()" type="button" class="btn btn-primary btn-lg" >
+
+    </button>
+    <img class="fullscreen-bg__video" id="myImage" src="/Farmer/farmer_2.1.png" width="1100" height="500">
+    <video id="myVideo" width="1100" height="500"  class="hidden">
+    <source src="/Farmer/farmer_2.1.mp4" type="video/mp4">
+    </video>    
+    </div>
+                
+    </div>
+    
+    <div class="w3-display-bottomleft w3-padding-large w3-text-black">
+    Powered by CME
+    </div>
+    </div>
+
+    <script>
+    function DisableTheAllButtons(){
+        for(var i=1;i<8;i++){
+            document.getElementById("btn"+i).className = "hidden";
+        }
+    }
+    function EnableTheAllButtons(){
+        for(var i=1;i<8;i++){
+            if(i!=7)
+                document.getElementById("btn"+i).className = "btn-cover";
+            else
+                document.getElementById("btn"+i).className = "btn btn-primary btn-lg";
+        }
+    }
+    </script>
+
+
+    <script>
+        var vid = document.getElementById("myVideo");
+        var MyImage = document.getElementById("myImage");
+        var MyAudio = document.getElementById("audio");
+        var btn = document.getElementById("button");
+        var count = 0;
+        function playVid() {
+           Click("btn8");
+            count++;                
+            switch(count){
+                case 1:
+                document.getElementById("button").className = "hidden";
+                DisableTheAllButtons();
+                vid.className="fullscreen-bg__video";
+                MyImage.className="hidden";
+               // MyAudio.src="/Voice_Memos/113.m4a";
+               // MyAudio.play();
+                vid.play();
+                setTimeout(function(){
+                vid.className="hidden";
+                MyImage.className="fullscreen-bg__video";
+                document.getElementById("button").className = "btn btn-primary btn-lg";
+                EnableTheAllButtons();
+                }, 7000);
+                MyImage.src="/Farmer/farmer_2.2.png";
+                var btn7 = document.getElementById("btn7");
+                var btn = document.getElementById("button");
+                btn7.style.left = "40%";
+                btn.style.left = "42%"; 
+                btn7.style.top = "19%";
+                btn.style.top = "24%";
+                    break;
+                case 2:
+                document.getElementById("button").className = "hidden";
+                vid.className="fullscreen-bg__video";
+                MyImage.className="hidden";
+                MyAudio.src="/Voice_Memos/Superman/Superman6.wav";
+                  MyAudio.play();
+                vid.src = "/Farmer/farmer_2.2.mp4";
+                vid.play();
+                setTimeout(function(){
+                vid.className="hidden";
+                MyImage.className="fullscreen-bg__video";
+                document.getElementById("button").className = "btn btn-primary btn-lg";
+                }, 5000);
+                MyImage.src="/Farmer/farmer_2.3.png";
+                var btn7 = document.getElementById("btn7");
+                var btn = document.getElementById("button");
+                btn7.style.left = "40%";
+                btn.style.left = "43%"; 
+                btn7.style.top = "19%";
+                btn.style.top = "24%";
+                    break;
+                case 3:
+                document.getElementById("button").className = "hidden";
+                vid.className="fullscreen-bg__video";
+                MyImage.className="hidden";
+                MyAudio.src="/Voice_Memos/Superman/Superman7.wav";
+                MyAudio.play();
+                vid.src = "/Farmer/farmer_2.3.mp4";
+                vid.play()
+                MyAudio.src="/Voice_Memos/Farmer/Farmer8.wav";
+                MyAudio.play();
+                    break;
+                default:
+                    break; 
+            }
+        };
+    </script>   
+
+</div>
+<style>
+	.btn-cover{
+	background-color:transparent;
+	}
+</style>
+</body></html>

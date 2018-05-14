@@ -1,0 +1,22 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {},
+  "author": "Nicole Munits",
+  "license": "ISC",
+  "bugs": {},
+  "dependencies": {
+    "chalk": "^2.3.2",
+    "express": "^4.16.2",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {}
+}

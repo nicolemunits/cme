@@ -1,0 +1,8 @@
+cd Camera Mouse
+cd Camera Mouse 2018
+start "" "Camera Mouse 2018.exe"
+cd ..
+cd ..
+ping 127.0.0.1 -n 6 > nul
+call startServer.bat
+pause

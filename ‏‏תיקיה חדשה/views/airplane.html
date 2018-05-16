@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CME Application</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <style>
+            body,h1 {font-family: "Raleway", sans-serif}
+            body, html {height: 100%}
+            .bgimg {
+                background-image: url("/else/wall.jpg");
+                min-height: 100%;
+                background-position: center;
+                background-size: cover;
+            }
+           a:hover {
+                /* font-family: Ariel; */
+                color:transparent;
+           }
+              #myAnimation {
+                width: 250px;
+                height: 250px;
+                position: absolute;
+                background-color: transparent;
+                border-color: transparent;
+              }
+
+              .btn {
+                  position:absolute;
+                  color: transparent;
+                  background: transparent;
+                  border-color: transparent;
+                  outline:0;
+                  width: 200px;
+                  height: 250px;
+              }
+              .prev-button{
+                left: 32%;
+                top: 24%;
+              }
+        </style>
+    </head>
+<body>
+    <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+        <div class="w3-display-topleft w3-padding-large w3-xlarge">
+          <a href="/"> <!--prev-->
+            <img border="0" src="/else/prev.png" class="prev-button" style="text-decoration:none;width:40px; height:40px">
+            </a>
+              <a href="/">
+                  <img border="0" src="/else/home.png" class="main-title" style="text-decoration:none;width:40px; height:40px">
+                  </a>
+          <!-- <a href="/" style="text-decoration:none;font-size: 40px;">C ME</a> -->
+        </div>
+
+        <!-- <p>
+          <button class="movingButton" onclick="myMove()"></button>
+        </p> -->
+
+        <div id ="myContainer">
+
+          <div id="myAnimation">
+            <img  src="/else/plane1.png" style="width:300px;height:200px;"></img>
+            <button id="airplaneButton" class="btn" onclick="myMove()" style="height:150px;left:52px;top:39px;"></button> 
+          </div>
+        </div>
+
+        <div class="w3-display-bottomleft w3-padding-large">
+            Powered by CME
+        </div>
+		<audio id='airplane-voice' style='visibility: hidden;' controls>
+		 <source src="/else/airplane.mp3" type="audio/mpeg">
+		  <source src="airplane.ogg" type="audio/ogg">
+		  Your browser does not support the audio tag.
+		</audio>
+    </div>
+
+    <script>
+        var counter=0;
+        var id;
+        var elem = document.getElementById("myAnimation");
+        // var elem2 = document.getElementById("myAnimation2")
+        var top1 = 0;
+        var left=0;
+
+        function myFunc(){
+          elem = document.getElementById("myAnimation");
+          //elem2 = document.getElementById("myAnimation2");
+          document.getElementById("airplaneButton").onclick = myMove;                  
+          counter++;
+          clearInterval(id);
+		  document.getElementById("airplane-voice").pause()
+		  document.getElementById("airplane-voice").currentTime =0
+        }
+
+        function myMove() {
+          //  elem = document.getElementById("myAnimation");
+          //  elem2 = document.getElementById("myAnimation2");
+          document.getElementById("airplaneButton").onclick = null;
+          id = setInterval(frame, 10)
+          setTimeout(myFunc, 5000)
+          function frame() {
+			document.getElementById("airplane-voice").play()
+            // if (pos == 350) {
+            //   clearInterval(id);
+            // } else {
+              switch(counter){
+                case 0:
+                  top1 = top1 + 0.85;
+                  left = left + 0.7;
+                  elem.style.top = top1 + 'px';
+                  elem.style.left = left + 'px';
+                  //elem2.style.top = top1 + 'px';
+                  //elem2.style.left = left + 'px';
+                  break;
+                case 1:
+                  top1 = top1 - 0.9;
+                  left = left + 0.7;
+                  elem.style.top = top1 + 'px';
+                  elem.style.left = left + 'px';
+                  //elem2.style.top = top1 + 'px';
+                  //elem2.style.left = left + 'px';
+                  break;
+                case 2:
+                  top1 = top1 + 0.8;
+                  left++;
+                  elem.style.top = top1 + 'px';
+                  elem.style.left = left + 'px';
+                  //elem2.style.top = top1 + 'px';
+                  //elem2.style.left = left + 'px';
+                  break;
+              }
+          }
+        }
+    </script>
+</body>
+</html>

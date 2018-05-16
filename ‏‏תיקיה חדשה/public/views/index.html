@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CME Application</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <script type="text/javascript" src="/Excel/FileSaver.js"></script>
+        <script type="text/javascript" src="/Excel/jszip.js"></script>
+        <script type="text/javascript" src="/Excel/myexcel.js"></script>        
+        <style>
+            body,h1 {font-family: "Raleway", sans-serif}
+            body, html {height: 100%}
+            .bgimg {
+                background-image: url("/else/wall.jpg");
+                min-height: 100%;
+                background-position: center;
+                background-size: cover; 
+            }
+            a:hover {
+                /* font-family: Ariel; */
+                color:rgb(187, 221, 231);
+            }
+        </style>
+
+<script>
+    function initAreas(){
+        var timeStamp = new Date().getTime(); //todo:
+        localStorage.setItem("startTime", timeStamp);//todo:
+        for(var i=1;i<97;i++)
+            localStorage.setItem("btn"+i, 0);
+        
+        localStorage.setItem("btn 1", "4");	
+        localStorage.setItem("btn 5", "fireman 1 area 5");
+        localStorage.setItem("btn 6", "fireman 1 area fireman 1 area 1");
+        localStorage.setItem("btn 2", "fireman 1 area 2");
+        localStorage.setItem("btn 3", "fireman 1 area 3");
+        localStorage.setItem("btn 4", "fireman 1 area 6");	
+        localStorage.setItem("btn 8", "fireman 1 area eyes");
+        localStorage.setItem("btn 9", "fireman 2 area 1");
+        localStorage.setItem("btn 10", "fireman 2 area 2");
+        localStorage.setItem("btn 11", "fireman 2 area 3");
+        localStorage.setItem("btn 12", "fireman 2 area 4");	
+        localStorage.setItem("btn 13", "fireman 2 area 5");
+        localStorage.setItem("btn 14", "fireman 2 area 6");	
+        localStorage.setItem("btn 15", "fireman 2 area face");	
+        localStorage.setItem("btn 16", "fireman 2 area eyes");
+        localStorage.setItem("btn 17", "fireman 3 area 1");
+        localStorage.setItem("btn 18", "fireman 3 area 2");
+        localStorage.setItem("btn 19", "fireman 3 area 3");
+        localStorage.setItem("btn 20", "fireman 3 area 4");	
+        localStorage.setItem("btn 21", "fireman 3 area 5");
+        localStorage.setItem("btn 22", "fireman 3 area 6");	
+        localStorage.setItem("btn 23", "fireman 3 area face");	
+        localStorage.setItem("btn 24", "fireman 3 area eyes");
+        localStorage.setItem("btn 25", "superman 1 area 1");
+        localStorage.setItem("btn 26", "superman 1 area 2");
+        localStorage.setItem("btn 27", "superman 1 area 3");
+        localStorage.setItem("btn 28", "superman 1 area 4");	
+        localStorage.setItem("btn 29", "superman 1 area 5");
+        localStorage.setItem("btn 30", "superman 1 area 6");	
+        localStorage.setItem("btn 31", "superman 1 area face");	
+        localStorage.setItem("btn 32", "superman 1 area eyes");
+        localStorage.setItem("btn 33", "superman 2 area 1");
+        localStorage.setItem("btn 34", "superman 2 area 2");
+        localStorage.setItem("btn 35", "superman 2 area 3");
+        localStorage.setItem("btn 36", "superman 2 area 4");	
+        localStorage.setItem("btn 37", "superman 2 area 5");
+        localStorage.setItem("btn 38", "superman 2 area 6");	
+        localStorage.setItem("btn 39", "superman 2 area face");	
+        localStorage.setItem("btn 40", "superman 2 area eyes");
+        localStorage.setItem("btn 41", "superman 3 area 1");
+        localStorage.setItem("btn 42", "superman 3 area 2");
+        localStorage.setItem("btn 43", "superman 3 area 3");
+        localStorage.setItem("btn 44", "superman 3 area 4");	
+        localStorage.setItem("btn 45", "superman 3 area 5");
+        localStorage.setItem("btn 46", "superman 3 area 6");	
+        localStorage.setItem("btn 47", "superman 3 area face");	
+        localStorage.setItem("btn 48", "superman 3 area eyes");
+        
+        localStorage.setItem("btn 49", "farman 1 area 1");
+        localStorage.setItem("btn 50", "farman 1 area 2");
+        localStorage.setItem("btn 51", "farman 1 area 3");
+        localStorage.setItem("btn 52", "farman 1 area 4");	
+        localStorage.setItem("btn 53", "farman 1 area 5");
+        localStorage.setItem("btn 54", "farman 1 area 6");	
+        localStorage.setItem("btn 55", "farman 1 area face");	
+        localStorage.setItem("btn 56", "farman 1 area eyes");
+        
+        localStorage.setItem("btn 57", "farman 2 area 1");
+        localStorage.setItem("btn 58", "farman 2 area 2");
+        localStorage.setItem("btn 59", "farman 2 area 3");
+        localStorage.setItem("btn 60", "farman 2 area 4");	
+        localStorage.setItem("btn 61", "farman 2 area 5");
+        localStorage.setItem("btn 62", "farman 2 area 6");	
+        localStorage.setItem("btn 63", "farman 2 area face");	
+        localStorage.setItem("btn 64", "farman 2 area eyes");
+        localStorage.setItem("btn 65", "farman 3 area 1");
+        localStorage.setItem("btn 66", "farman 3 area 2");
+        localStorage.setItem("btn 67", "farman 3 area 3");
+        localStorage.setItem("btn 68", "farman 3 area 4");	
+        localStorage.setItem("btn 69", "farman 3 area 5");
+        localStorage.setItem("btn 70", "farman 3 area 6");	
+        localStorage.setItem("btn 71", "farman 3 area face");	
+        localStorage.setItem("btn 72", "farman 3 area eyes");
+ 
+        localStorage.setItem("btn 73", "basketball 1 area 1");
+        localStorage.setItem("btn 74", "basketball 1 area 2");
+        localStorage.setItem("btn 75", "basketball 1 area 3");
+        localStorage.setItem("btn 76", "basketball 1 area 4");	
+        localStorage.setItem("btn 77", "basketball 1 area 5");
+        localStorage.setItem("btn 78", "basketball 1 area 6");	
+        localStorage.setItem("btn 79", "basketball 1 area face");	
+        localStorage.setItem("btn 80", "basketball 1 area eyes");
+        localStorage.setItem("btn 81", "basketball 2 area 1");
+        localStorage.setItem("btn 82", "basketball 2 area 2");
+        localStorage.setItem("btn 83", "basketball 2 area 3");
+        localStorage.setItem("btn 84", "basketball 2 area 4");	
+        localStorage.setItem("btn 85", "basketball 2 area 5");
+        localStorage.setItem("btn 86", "basketball 2 area 6");	
+        localStorage.setItem("btn 87", "basketball 2 area face");	
+        localStorage.setItem("btn 88", "basketball 2 area eyes");
+        localStorage.setItem("btn 89", "basketball 3 area 1");
+        localStorage.setItem("btn 90", "basketball 3 area 2");
+        localStorage.setItem("btn 91", "basketball 3 area 3");
+        localStorage.setItem("btn 92", "basketball 3 area 4");	
+        localStorage.setItem("btn 93", "basketball 3 area 5");
+        localStorage.setItem("btn 94", "basketball 3 area 6");	
+        localStorage.setItem("btn 95", "basketball 3 area face");	
+        localStorage.setItem("btn 96", "basketball 3 area eyes");
+    }
+    </script>
+    
+    </head>
+<body>
+    <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+    <div class="w3-display-topleft w3-padding-large w3-xlarge">
+          
+        <a href="/" style="text-decoration:none;font-size: 40px;">CME</a>
+    </div>
+    <div class="w3-display-middle">
+        <a class="w3-jumbo w3-animate-top" href="/game/airplane" style="font-size:60px;text-decoration:none;">לחץ כאן לתרגל</a>
+        <br />
+        <a class="w3-jumbo w3-animate-top" onclick="initAreas();" href="/game/levels" style="font-size:60px;text-decoration:none;">לחץ כאן לשחק</a>        
+    </div>
+    <div class="w3-display-bottomleft w3-padding-large">
+        Powered by CME
+    </div>
+    </div>
+</body>
+</html>
+ 

@@ -15,55 +15,19 @@
         <script src="/Excel/jszip.js"></script>
         <script src="/Excel/myexcel.js"></script>
 
-
-
-
-        <!-- TODO MORIS -->
-        <script>
-            var date = new Date(); // DD/MM/YYYY HH:MM:SS
-            //var dateStamp = date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-            
-            totalVid=0; //todo: need add this parameter
-        </script>
-
-
-
 <script>
-function playAudioAgain(){
-			MyAudio = document.getElementById("audio");
-			MyAudio.currentTime=0;
-			MyAudio.play();
-			 setTimeout(function(){
-               MyAudio.pause()
-                }, MyAudio.duration*1000);
-		}
-		function playVidAgain(){
-			  document.getElementById("button").className = "hidden";
-                DisableTheAllButtons();
-                vid.className="fullscreen-bg__video";
-                MyImage.className="hidden";
-                MyAudio.play();
-                vid.play();
-			 setTimeout(function(){
-                vid.className="hidden";
-                MyImage.className="fullscreen-bg__video";
-                document.getElementById("button").className = "btn btn-primary btn-lg";
-                EnableTheAllButtons();
-                }, vid.duration*1000);
-		}
     function initAreas(){
         var timeStamp = new Date().getTime(); //todo:
         localStorage.setItem("startTime", timeStamp);//todo:
         for(var i=1;i<97;i++)
             localStorage.setItem("btn"+i, 0);
         
-        localStorage.setItem("btn 1", "fireman 1 area 1");
+        localStorage.setItem("btn 1", "4");	
+        localStorage.setItem("btn 5", "fireman 1 area 5");
+        localStorage.setItem("btn 6", "fireman 1 area fireman 1 area 1");
         localStorage.setItem("btn 2", "fireman 1 area 2");
         localStorage.setItem("btn 3", "fireman 1 area 3");
-        localStorage.setItem("btn 4", "fireman 1 area 4");	
-        localStorage.setItem("btn 5", "fireman 1 area 5");
-        localStorage.setItem("btn 6", "fireman 1 area 6");	
-        localStorage.setItem("btn 7", "fireman 1 area face");	
+        localStorage.setItem("btn 4", "fireman 1 area 6");	
         localStorage.setItem("btn 8", "fireman 1 area eyes");
         localStorage.setItem("btn 9", "fireman 2 area 1");
         localStorage.setItem("btn 10", "fireman 2 area 2");
@@ -157,6 +121,43 @@ function playAudioAgain(){
         localStorage.setItem("btn 95", "basketball 3 area face");	
         localStorage.setItem("btn 96", "basketball 3 area eyes");
     }
+    </script>
+
+
+        <!-- TODO MORIS -->
+        <script>
+            var date = new Date(); // DD/MM/YYYY HH:MM:SS
+            //var dateStamp = date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+            
+            totalVid=0; //todo: need add this parameter
+        </script>
+
+
+
+<script>
+function playAudioAgain(){
+			MyAudio = document.getElementById("audio");
+			MyAudio.currentTime=0;
+			MyAudio.play();
+			 setTimeout(function(){
+               MyAudio.pause()
+                }, MyAudio.duration*1000);
+		}
+		function playVidAgain(){
+			  document.getElementById("button").className = "hidden";
+                DisableTheAllButtons();
+                vid.className="fullscreen-bg__video";
+                MyImage.className="hidden";
+                MyAudio.play();
+                vid.play();
+			 setTimeout(function(){
+                vid.className="hidden";
+                MyImage.className="fullscreen-bg__video";
+                document.getElementById("button").className = "btn btn-primary btn-lg";
+                EnableTheAllButtons();
+                }, vid.duration*1000);
+		}
+   
 	function Click(id){
 		var temp = localStorage.getItem(id);
 		if(temp == "NaN")
@@ -164,9 +165,6 @@ function playAudioAgain(){
 		var newValue = parseInt(temp)+1;
 		localStorage.setItem(id, newValue);
   }
-window.onload = function(e){
-    initAreas();
-}
 
 window.onload = function(e){
 var MyAudio = document.getElementById("audio");
@@ -187,6 +185,9 @@ document.getElementById("button").className = "btn btn-primary btn-lg";
 }
 </script>
 
+<script>
+        document.documentElement.style.cursor = 'url("data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ4Ny44MDMgNDg3LjgwMyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDg3LjgwMyA0ODcuODAzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCI+CjxnPgoJPHBhdGggZD0iTTQ4MC42LDI5Ni4xMzNMNDE2LDkxLjAzM2MtOS4xLTI5LjktNDAuOS00Ni44LTcwLjgtMzcuN2MtNy4xLDIuMi0xMS4yLDkuNy05LDE2LjhzOS43LDExLjIsMTYuOCw5ICAgYzE1LjctNC44LDMyLjMsNC4xLDM3LjEsMTkuOHYwLjFsNDYuMiwxNDYuOWMtMTQuNy04LjMtMzEuNi0xMy00OS42LTEzYy01MS44LDAtOTQuNiwzOS4yLTEwMC40LDg5LjRoLTg1ICAgYy02LjYtNDkuNC00OS04Ny42LTEwMC4yLTg3LjZjLTE4LjEsMC0zNS4xLDQuOC00OS44LDEzLjFsNDYuOC0xNDguOHYtMC4xYzQuOC0xNS43LDIxLjQtMjQuNiwzNy4xLTE5LjhjNy4xLDIuMiwxNC43LTEuOSwxNi44LTkgICBjMi4yLTcuMS0xLjktMTQuNy05LTE2LjhjLTI5LjktOS4xLTYxLjYsNy44LTcwLjgsMzcuN2wtNjQuNCwyMDUuM2MtMC4yLDAuNi0wLjMsMS4xLTAuNCwxLjdjLTQuNywxMS43LTcuNCwyNC41LTcuNCwzNy44ICAgYzAsNTUuNyw0NS40LDEwMS4xLDEwMS4xLDEwMS4xYzUxLjIsMCw5My42LTM4LjIsMTAwLjItODcuNmg4NS41YzcuNCw0OC41LDQ5LjQsODUuOCw5OS45LDg1LjhjNTUuNywwLDEwMS4xLTQ1LjQsMTAxLjEtMTAxLjEgICBDNDg3LjksMzIwLjYzMyw0ODUuMywzMDcuODMzLDQ4MC42LDI5Ni4xMzN6IE0xMDEuMiw0MDkuOTMzYy00MC45LDAtNzQuMS0zMy4yLTc0LjEtNzQuMXMzMy4yLTc0LjEsNzQuMS03NC4xczc0LjEsMzMuMiw3NC4xLDc0LjEgICBTMTQyLDQwOS45MzMsMTAxLjIsNDA5LjkzM3ogTTM4Ni44LDQwOC4xMzNjLTQwLjksMC03NC4xLTMzLjItNzQuMS03NC4xczMzLjMtNzQuMSw3NC4xLTc0LjFzNzQuMSwzMy4yLDc0LjEsNzQuMSAgIFM0MjcuNyw0MDguMTMzLDM4Ni44LDQwOC4xMzN6IiBmaWxsPSIjMDAwMDAwIi8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg=="), auto';
+    </script>
 
 
 <!-- TODO MORIS -->
@@ -328,7 +329,7 @@ padding:10px 50px;
 background-color: Transparent;
 background-repeat:no-repeat;
 border: none;
-cursor:pointer;
+cursor: url("data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ4Ny44MDMgNDg3LjgwMyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDg3LjgwMyA0ODcuODAzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCI+CjxnPgoJPHBhdGggZD0iTTQ4MC42LDI5Ni4xMzNMNDE2LDkxLjAzM2MtOS4xLTI5LjktNDAuOS00Ni44LTcwLjgtMzcuN2MtNy4xLDIuMi0xMS4yLDkuNy05LDE2LjhzOS43LDExLjIsMTYuOCw5ICAgYzE1LjctNC44LDMyLjMsNC4xLDM3LjEsMTkuOHYwLjFsNDYuMiwxNDYuOWMtMTQuNy04LjMtMzEuNi0xMy00OS42LTEzYy01MS44LDAtOTQuNiwzOS4yLTEwMC40LDg5LjRoLTg1ICAgYy02LjYtNDkuNC00OS04Ny42LTEwMC4yLTg3LjZjLTE4LjEsMC0zNS4xLDQuOC00OS44LDEzLjFsNDYuOC0xNDguOHYtMC4xYzQuOC0xNS43LDIxLjQtMjQuNiwzNy4xLTE5LjhjNy4xLDIuMiwxNC43LTEuOSwxNi44LTkgICBjMi4yLTcuMS0xLjktMTQuNy05LTE2LjhjLTI5LjktOS4xLTYxLjYsNy44LTcwLjgsMzcuN2wtNjQuNCwyMDUuM2MtMC4yLDAuNi0wLjMsMS4xLTAuNCwxLjdjLTQuNywxMS43LTcuNCwyNC41LTcuNCwzNy44ICAgYzAsNTUuNyw0NS40LDEwMS4xLDEwMS4xLDEwMS4xYzUxLjIsMCw5My42LTM4LjIsMTAwLjItODcuNmg4NS41YzcuNCw0OC41LDQ5LjQsODUuOCw5OS45LDg1LjhjNTUuNywwLDEwMS4xLTQ1LjQsMTAxLjEtMTAxLjEgICBDNDg3LjksMzIwLjYzMyw0ODUuMywzMDcuODMzLDQ4MC42LDI5Ni4xMzN6IE0xMDEuMiw0MDkuOTMzYy00MC45LDAtNzQuMS0zMy4yLTc0LjEtNzQuMXMzMy4yLTc0LjEsNzQuMS03NC4xczc0LjEsMzMuMiw3NC4xLDc0LjEgICBTMTQyLDQwOS45MzMsMTAxLjIsNDA5LjkzM3ogTTM4Ni44LDQwOC4xMzNjLTQwLjksMC03NC4xLTMzLjItNzQuMS03NC4xczMzLjMtNzQuMSw3NC4xLTc0LjFzNzQuMSwzMy4yLDc0LjEsNzQuMSAgIFM0MjcuNyw0MDguMTMzLDM4Ni44LDQwOC4xMzN6IiBmaWxsPSIjMDAwMDAwIi8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg=="), auto;
 overflow: hidden;
 color: transparent;
 outline:none;
@@ -342,7 +343,7 @@ height: 40px;
 background-color: Transparent;
 background-repeat:no-repeat;
 border: none;
-cursor:pointer;
+cursor: url("data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ4Ny44MDMgNDg3LjgwMyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDg3LjgwMyA0ODcuODAzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCI+CjxnPgoJPHBhdGggZD0iTTQ4MC42LDI5Ni4xMzNMNDE2LDkxLjAzM2MtOS4xLTI5LjktNDAuOS00Ni44LTcwLjgtMzcuN2MtNy4xLDIuMi0xMS4yLDkuNy05LDE2LjhzOS43LDExLjIsMTYuOCw5ICAgYzE1LjctNC44LDMyLjMsNC4xLDM3LjEsMTkuOHYwLjFsNDYuMiwxNDYuOWMtMTQuNy04LjMtMzEuNi0xMy00OS42LTEzYy01MS44LDAtOTQuNiwzOS4yLTEwMC40LDg5LjRoLTg1ICAgYy02LjYtNDkuNC00OS04Ny42LTEwMC4yLTg3LjZjLTE4LjEsMC0zNS4xLDQuOC00OS44LDEzLjFsNDYuOC0xNDguOHYtMC4xYzQuOC0xNS43LDIxLjQtMjQuNiwzNy4xLTE5LjhjNy4xLDIuMiwxNC43LTEuOSwxNi44LTkgICBjMi4yLTcuMS0xLjktMTQuNy05LTE2LjhjLTI5LjktOS4xLTYxLjYsNy44LTcwLjgsMzcuN2wtNjQuNCwyMDUuM2MtMC4yLDAuNi0wLjMsMS4xLTAuNCwxLjdjLTQuNywxMS43LTcuNCwyNC41LTcuNCwzNy44ICAgYzAsNTUuNyw0NS40LDEwMS4xLDEwMS4xLDEwMS4xYzUxLjIsMCw5My42LTM4LjIsMTAwLjItODcuNmg4NS41YzcuNCw0OC41LDQ5LjQsODUuOCw5OS45LDg1LjhjNTUuNywwLDEwMS4xLTQ1LjQsMTAxLjEtMTAxLjEgICBDNDg3LjksMzIwLjYzMyw0ODUuMywzMDcuODMzLDQ4MC42LDI5Ni4xMzN6IE0xMDEuMiw0MDkuOTMzYy00MC45LDAtNzQuMS0zMy4yLTc0LjEtNzQuMXMzMy4yLTc0LjEsNzQuMS03NC4xczc0LjEsMzMuMiw3NC4xLDc0LjEgICBTMTQyLDQwOS45MzMsMTAxLjIsNDA5LjkzM3ogTTM4Ni44LDQwOC4xMzNjLTQwLjksMC03NC4xLTMzLjItNzQuMS03NC4xczMzLjMtNzQuMSw3NC4xLTc0LjFzNzQuMSwzMy4yLDc0LjEsNzQuMSAgIFM0MjcuNyw0MDguMTMzLDM4Ni44LDQwOC4xMzN6IiBmaWxsPSIjMDAwMDAwIi8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg=="), auto;
 overflow: hidden;
 color: transparent;
 outline:none;
@@ -366,12 +367,14 @@ height: 100%;
 button.btn.btn-primary.btn-lg {
 position: absolute;
 z-index: 9999999;
-left: 41%;
-top: 18%;
+left: 42%;
+top: 22%;
 width: 124px;
 height: 51px;
 background: transparent;
 border: transparent;
+cursor: url("data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ4Ny44MDMgNDg3LjgwMyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDg3LjgwMyA0ODcuODAzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCI+CjxnPgoJPHBhdGggZD0iTTQ4MC42LDI5Ni4xMzNMNDE2LDkxLjAzM2MtOS4xLTI5LjktNDAuOS00Ni44LTcwLjgtMzcuN2MtNy4xLDIuMi0xMS4yLDkuNy05LDE2LjhzOS43LDExLjIsMTYuOCw5ICAgYzE1LjctNC44LDMyLjMsNC4xLDM3LjEsMTkuOHYwLjFsNDYuMiwxNDYuOWMtMTQuNy04LjMtMzEuNi0xMy00OS42LTEzYy01MS44LDAtOTQuNiwzOS4yLTEwMC40LDg5LjRoLTg1ICAgYy02LjYtNDkuNC00OS04Ny42LTEwMC4yLTg3LjZjLTE4LjEsMC0zNS4xLDQuOC00OS44LDEzLjFsNDYuOC0xNDguOHYtMC4xYzQuOC0xNS43LDIxLjQtMjQuNiwzNy4xLTE5LjhjNy4xLDIuMiwxNC43LTEuOSwxNi44LTkgICBjMi4yLTcuMS0xLjktMTQuNy05LTE2LjhjLTI5LjktOS4xLTYxLjYsNy44LTcwLjgsMzcuN2wtNjQuNCwyMDUuM2MtMC4yLDAuNi0wLjMsMS4xLTAuNCwxLjdjLTQuNywxMS43LTcuNCwyNC41LTcuNCwzNy44ICAgYzAsNTUuNyw0NS40LDEwMS4xLDEwMS4xLDEwMS4xYzUxLjIsMCw5My42LTM4LjIsMTAwLjItODcuNmg4NS41YzcuNCw0OC41LDQ5LjQsODUuOCw5OS45LDg1LjhjNTUuNywwLDEwMS4xLTQ1LjQsMTAxLjEtMTAxLjEgICBDNDg3LjksMzIwLjYzMyw0ODUuMywzMDcuODMzLDQ4MC42LDI5Ni4xMzN6IE0xMDEuMiw0MDkuOTMzYy00MC45LDAtNzQuMS0zMy4yLTc0LjEtNzQuMXMzMy4yLTc0LjEsNzQuMS03NC4xczc0LjEsMzMuMiw3NC4xLDc0LjEgICBTMTQyLDQwOS45MzMsMTAxLjIsNDA5LjkzM3ogTTM4Ni44LDQwOC4xMzNjLTQwLjksMC03NC4xLTMzLjItNzQuMS03NC4xczMzLjMtNzQuMSw3NC4xLTc0LjFzNzQuMSwzMy4yLDc0LjEsNzQuMSAgIFM0MjcuNyw0MDguMTMzLDM4Ni44LDQwOC4xMzN6IiBmaWxsPSIjMDAwMDAwIi8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg=="), auto;
+
 }
 .main-title{
 position: absolute;
@@ -394,7 +397,7 @@ color: #fff;
 background-color: transparent;
 border-color: #4cae4c;
 }
-button#btn7 {
+button#btn87 {
 background: transparent;
 border: transparent;
 left: 38%;
@@ -403,6 +406,8 @@ height: 24%;
 width: 15%;
 top: 15%;
 z-index: 99999;
+cursor: url("data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ4Ny44MDMgNDg3LjgwMyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDg3LjgwMyA0ODcuODAzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCI+CjxnPgoJPHBhdGggZD0iTTQ4MC42LDI5Ni4xMzNMNDE2LDkxLjAzM2MtOS4xLTI5LjktNDAuOS00Ni44LTcwLjgtMzcuN2MtNy4xLDIuMi0xMS4yLDkuNy05LDE2LjhzOS43LDExLjIsMTYuOCw5ICAgYzE1LjctNC44LDMyLjMsNC4xLDM3LjEsMTkuOHYwLjFsNDYuMiwxNDYuOWMtMTQuNy04LjMtMzEuNi0xMy00OS42LTEzYy01MS44LDAtOTQuNiwzOS4yLTEwMC40LDg5LjRoLTg1ICAgYy02LjYtNDkuNC00OS04Ny42LTEwMC4yLTg3LjZjLTE4LjEsMC0zNS4xLDQuOC00OS44LDEzLjFsNDYuOC0xNDguOHYtMC4xYzQuOC0xNS43LDIxLjQtMjQuNiwzNy4xLTE5LjhjNy4xLDIuMiwxNC43LTEuOSwxNi44LTkgICBjMi4yLTcuMS0xLjktMTQuNy05LTE2LjhjLTI5LjktOS4xLTYxLjYsNy44LTcwLjgsMzcuN2wtNjQuNCwyMDUuM2MtMC4yLDAuNi0wLjMsMS4xLTAuNCwxLjdjLTQuNywxMS43LTcuNCwyNC41LTcuNCwzNy44ICAgYzAsNTUuNyw0NS40LDEwMS4xLDEwMS4xLDEwMS4xYzUxLjIsMCw5My42LTM4LjIsMTAwLjItODcuNmg4NS41YzcuNCw0OC41LDQ5LjQsODUuOCw5OS45LDg1LjhjNTUuNywwLDEwMS4xLTQ1LjQsMTAxLjEtMTAxLjEgICBDNDg3LjksMzIwLjYzMyw0ODUuMywzMDcuODMzLDQ4MC42LDI5Ni4xMzN6IE0xMDEuMiw0MDkuOTMzYy00MC45LDAtNzQuMS0zMy4yLTc0LjEtNzQuMXMzMy4yLTc0LjEsNzQuMS03NC4xczc0LjEsMzMuMiw3NC4xLDc0LjEgICBTMTQyLDQwOS45MzMsMTAxLjIsNDA5LjkzM3ogTTM4Ni44LDQwOC4xMzNjLTQwLjksMC03NC4xLTMzLjItNzQuMS03NC4xczMzLjMtNzQuMSw3NC4xLTc0LjFzNzQuMSwzMy4yLDc0LjEsNzQuMSAgIFM0MjcuNyw0MDguMTMzLDM4Ni44LDQwOC4xMzN6IiBmaWxsPSIjMDAwMDAwIi8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg=="), auto;
+
 }
 
 /* TODO */
@@ -423,7 +428,31 @@ html, body {
 
     <button onclick="Calc()">הפסק פעילות</button>
 	 <button onclick="playVidAgain()">הפעל נגן</button>
-	  <button onclick="playAudioAgain()">השמעה שנית</button>
+      <button onclick="playAudioAgain()">השמעה שנית</button>
+      
+
+
+
+
+    <button onclick="ChangeChar()">החלף דמות</button>
+
+    <script>
+
+        function myFunction() {
+            var txt;
+            if (confirm("הפעולה תופסק האם לייצא דוח?")) {
+                Calc();
+                document.location.href ="/";
+            } else {
+                document.location.href ="/";
+            }
+        }
+
+        function ChangeChar(){
+            document.location.href ="/game/levels/boys";
+        }
+    </script>
+      
 
     <a href="/game/levels/boys/basketball"> <!--prev-->
     <img border="0" src="/else/prev.png" class="prev-button" style="text-decoration:none;width:40px; height:40px">
@@ -433,9 +462,9 @@ html, body {
     <img border="0" src="/else/next.png" class="next-button" style="text-decoration:none;width:40px; height:40px">
     </a>
 
-    <a href="/"> <!--home button-->
-    <img border="0" src="/else/home.png" class="main-title" style="text-decoration:none;width:40px; height:40px">
-    </a>
+ 
+    <input type="image" border="0" src="/else/home.png" onclick="myFunction()" class="main-title" style="text-decoration:none;width:40px; height:40px"></input>
+
 
      <!-- TODO: adding audio -->
      <audio id="audio" controls autoplay class="w3-right">
@@ -474,21 +503,21 @@ html, body {
     width: 33%;
     height: 100%;
 ">
-	<button type="button" id="btn1" onclick="Click(id);" class=" btn-cover" ng-click="Cancel()" aria-haspopup="true" aria-expanded="false" style="width: 100%;height: 100%;border: none;"><font size="6"></font></button>
+	<button type="button" id="btn81" onclick="Click(id);" class=" btn-cover" ng-click="Cancel()" aria-haspopup="true" aria-expanded="false" style="width: 100%;height: 100%;border: none;"><font size="6"></font></button>
 	</div>
 	<div class="col-md-4 nopadding" style="
     float: left;
     width: 33%;
     height: 100%;
 ">
-	<button type="button" id="btn2" onclick="Click(id);" class="btn-cover" ng-click="Proceed()" aria-haspopup="true" aria-expanded="false" style="width:100%;height: 100%;border: none;"><font size="6"></font></button>
+	<button type="button" id="btn82" onclick="Click(id);" class="btn-cover" ng-click="Proceed()" aria-haspopup="true" aria-expanded="false" style="width:100%;height: 100%;border: none;"><font size="6"></font></button>
 	</div>
 	<div class="col-md-4 nopadding" style="
     float: left;
     height: 100%;
     width: 33%;
 ">
-	<button type="button" id="btn3" onclick="Click(id);" class="btn-cover" ng-click="Proceed()" aria-haspopup="true" aria-expanded="false" style="width:100%;height: 100%;border: none;"><font size="6"></font></button>
+	<button type="button" id="btn83" onclick="Click(id);" class="btn-cover" ng-click="Proceed()" aria-haspopup="true" aria-expanded="false" style="width:100%;height: 100%;border: none;"><font size="6"></font></button>
 	</div>
 	</div>
 	<div class="row" style="
@@ -504,7 +533,7 @@ html, body {
     width: 33.3%;
     height: 100%;
 ">
-	<button type="button" id="btn4" onclick="Click(id);" class="btn-cover" ng-click="Cancel()" aria-haspopup="true" aria-expanded="false" style="width:100%;height: 100%;border: none;"><font size="6"></font></button>
+	<button type="button" id="btn84" onclick="Click(id);" class="btn-cover" ng-click="Cancel()" aria-haspopup="true" aria-expanded="false" style="width:100%;height: 100%;border: none;"><font size="6"></font></button>
 	</div>
 	<div class="col-md-4 nopadding" style="
     /* float: left; */
@@ -513,21 +542,21 @@ html, body {
     width: 33.3%;
     height: 100%;
 ">
-	<button type="button" id="btn5" onclick="Click(id);" class="btn-cover" ng-click="Proceed()" aria-haspopup="true" aria-expanded="false" style="width:100%;height: 100%;border: none;"><font size="6"></font></button>
+	<button type="button" id="btn85" onclick="Click(id);" class="btn-cover" ng-click="Proceed()" aria-haspopup="true" aria-expanded="false" style="width:100%;height: 100%;border: none;"><font size="6"></font></button>
 	</div>
 	<div class="col-md-4 nopadding" style="
     float: left;
     width: 33.3%;
     height: 100%;
 ">
-	<button type="button" id="btn6" onclick="Click(id);" class="btn-cover" ng-click="Proceed()" aria-haspopup="true" aria-expanded="false" style="width:100%;height: 100%;border: none;"><font size="6"></font></button>
+	<button type="button" id="btn86" onclick="Click(id);" class="btn-cover" ng-click="Proceed()" aria-haspopup="true" aria-expanded="false" style="width:100%;height: 100%;border: none;"><font size="6"></font></button>
 	</div>
 					 
 	</div> 
 </div>
 					
 					
-    <button id="btn7" onclick="Click(id);" type="button" class="btn btn-primary btn-lg" >
+    <button id="btn87" onclick="Click(id);" type="button" class="btn btn-primary btn-lg" >
 
     </button>
     <button id="button" onclick="playVid()" type="button" class="btn btn-primary btn-lg" >
@@ -548,13 +577,13 @@ html, body {
 
     <script>
     function DisableTheAllButtons(){
-        for(var i=1;i<8;i++){
+        for(var i=81;i<88;i++){
             document.getElementById("btn"+i).className = "hidden";
         }
     }
     function EnableTheAllButtons(){
-        for(var i=1;i<8;i++){
-            if(i!=7)
+        for(var i=81;i<88;i++){
+            if(i!=87)
                 document.getElementById("btn"+i).className = "btn-cover";
             else
                 document.getElementById("btn"+i).className = "btn btn-primary btn-lg";
@@ -570,7 +599,7 @@ html, body {
         var btn = document.getElementById("button");
         var count = 0;
         function playVid() {
-           // Click("btn8");
+            Click("btn88");
             count++;                
             switch(count){
                 case 1:
@@ -586,8 +615,10 @@ html, body {
                 MyImage.className="fullscreen-bg__video";
                 document.getElementById("button").className = "btn btn-primary btn-lg";
                 EnableTheAllButtons();
+
                 }, 7000);
                // MyImage.src="/Player/player_2.2.png";
+               totalVid+=7;
                     break;
                 case 2:
                 document.getElementById("button").className = "hidden";
@@ -603,6 +634,7 @@ html, body {
                 document.getElementById("button").className = "btn btn-primary btn-lg";
                 }, 5000);
               //  MyImage.src="/Player/player_2.3.png";
+              totalVid+=5;
                     break;
                 case 3:
                 document.getElementById("button").className = "hidden";
@@ -616,6 +648,7 @@ html, body {
                 MyAudio.play();
                 MyAudio.src="/Voice_Memos/Player/BPlayer11.wav";
                 MyAudio.play();
+                totalVid+=8;
                     break;
                 default:
                     break; 
@@ -627,6 +660,8 @@ html, body {
 <style>
 	.btn-cover{
 	background-color:transparent;
+    cursor: url("data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ4Ny44MDMgNDg3LjgwMyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDg3LjgwMyA0ODcuODAzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCI+CjxnPgoJPHBhdGggZD0iTTQ4MC42LDI5Ni4xMzNMNDE2LDkxLjAzM2MtOS4xLTI5LjktNDAuOS00Ni44LTcwLjgtMzcuN2MtNy4xLDIuMi0xMS4yLDkuNy05LDE2LjhzOS43LDExLjIsMTYuOCw5ICAgYzE1LjctNC44LDMyLjMsNC4xLDM3LjEsMTkuOHYwLjFsNDYuMiwxNDYuOWMtMTQuNy04LjMtMzEuNi0xMy00OS42LTEzYy01MS44LDAtOTQuNiwzOS4yLTEwMC40LDg5LjRoLTg1ICAgYy02LjYtNDkuNC00OS04Ny42LTEwMC4yLTg3LjZjLTE4LjEsMC0zNS4xLDQuOC00OS44LDEzLjFsNDYuOC0xNDguOHYtMC4xYzQuOC0xNS43LDIxLjQtMjQuNiwzNy4xLTE5LjhjNy4xLDIuMiwxNC43LTEuOSwxNi44LTkgICBjMi4yLTcuMS0xLjktMTQuNy05LTE2LjhjLTI5LjktOS4xLTYxLjYsNy44LTcwLjgsMzcuN2wtNjQuNCwyMDUuM2MtMC4yLDAuNi0wLjMsMS4xLTAuNCwxLjdjLTQuNywxMS43LTcuNCwyNC41LTcuNCwzNy44ICAgYzAsNTUuNyw0NS40LDEwMS4xLDEwMS4xLDEwMS4xYzUxLjIsMCw5My42LTM4LjIsMTAwLjItODcuNmg4NS41YzcuNCw0OC41LDQ5LjQsODUuOCw5OS45LDg1LjhjNTUuNywwLDEwMS4xLTQ1LjQsMTAxLjEtMTAxLjEgICBDNDg3LjksMzIwLjYzMyw0ODUuMywzMDcuODMzLDQ4MC42LDI5Ni4xMzN6IE0xMDEuMiw0MDkuOTMzYy00MC45LDAtNzQuMS0zMy4yLTc0LjEtNzQuMXMzMy4yLTc0LjEsNzQuMS03NC4xczc0LjEsMzMuMiw3NC4xLDc0LjEgICBTMTQyLDQwOS45MzMsMTAxLjIsNDA5LjkzM3ogTTM4Ni44LDQwOC4xMzNjLTQwLjksMC03NC4xLTMzLjItNzQuMS03NC4xczMzLjMtNzQuMSw3NC4xLTc0LjFzNzQuMSwzMy4yLDc0LjEsNzQuMSAgIFM0MjcuNyw0MDguMTMzLDM4Ni44LDQwOC4xMzN6IiBmaWxsPSIjMDAwMDAwIi8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg=="), auto;
+
 	}
 </style>
 </body></html>

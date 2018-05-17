@@ -165,7 +165,6 @@ function playAudioAgain(){
 		var newValue = parseInt(temp)+1;
 		localStorage.setItem(id, newValue);
   }
-
 window.onload = function(e){
 var MyAudio = document.getElementById("audio");
 document.getElementById("button").className = "hidden";
@@ -205,7 +204,6 @@ return d;
 
 <script>
     //todo: need tae all function about excel!
-
 function Excel(ex, key, count){
 var excel = ex;// Default font
 // excel.set is the main function to generate content:
@@ -227,7 +225,6 @@ for (var i=0;i<headers.length;i++){	// Loop all the haders
     excel.set(0,i,undefined,"auto");// Set COLUMN width to auto (according to the standard this is only valid for numeric columns)
 }
     //todo: need tae all function about excel!
-
 // Now let's write some data
 var initDate = new Date(2000, 0, 1);
 var endDate = new Date(2016, 0, 1);
@@ -236,17 +233,13 @@ var dateStyle = excel.addStyle ( { // Format for date cells
         format: "yyyy.mm.dd hh:mm:ss", // using DATE mask, Check $JExcel.formats for built-in formats or provide your own 
         font: "#00AA00"});//in color green
     //todo: need tae all function about excel!
-
 var x = new Date();
 myVar = x.toString();
-
             var loc = window.location.pathname;
             var dir = loc.substring(0, loc.lastIndexOf('/'));
             var currentDirectory = window.location.pathname.split('/').slice(0, -1).join('/')
             var finalDirectory = "file://"+currentDirectory;
             var local = "file://C:/Users/Public/Pictures"
-
-
         var amountOfSeconds = 0;
         var totalSeconds = localStorage.getItem("stopTime") - localStorage.getItem("startTime");
         totalSeconds /= 1000;
@@ -270,9 +263,7 @@ myVar = x.toString();
                 //excel.set(0,4,i,"Some other text");
             } // Some other text
         }
-
            //todo: need tae all function about excel!
-
         excel.set(0,5,1,"זמן ריצה כולל (שניות)");
         excel.set(0,6,1,totalSeconds);
         
@@ -282,20 +273,14 @@ myVar = x.toString();
         var time = totalSeconds-amountOfSeconds-totalVid;
         excel.set(0,3,k,time.toString());
         excel.set(0,4,k, parseFloat((time/totalSeconds*100).toString()).toFixed(2) + "%");
-
         excel.set(0,0,k+1,"זמן וידאו");
         excel.set(0,1,k+1,"-");
         excel.set(0,2,k+1,"-");
         excel.set(0,1,k+1,totalVid.toString());
         excel.set(0,4,k+1, parseFloat((totalVid/totalSeconds*100).toString()).toFixed(2) + "%");
-
 //todo: thats all excel need to take!
-
-
 }
-
 //todo: need take and edit the calc function
-
 function Calc(){
 var timeStamp = new Date().getTime();
 localStorage.setItem("stopTime",timeStamp);
@@ -304,7 +289,6 @@ Excel(excel);
 excel.generate("SampleData.xlsx");
 initAreas(); //clear local storage and init values and areas
 }
-
 </script>
 
 
@@ -374,7 +358,6 @@ height: 51px;
 background: transparent;
 border: transparent;
 cursor: url("data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ4Ny44MDMgNDg3LjgwMyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDg3LjgwMyA0ODcuODAzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCI+CjxnPgoJPHBhdGggZD0iTTQ4MC42LDI5Ni4xMzNMNDE2LDkxLjAzM2MtOS4xLTI5LjktNDAuOS00Ni44LTcwLjgtMzcuN2MtNy4xLDIuMi0xMS4yLDkuNy05LDE2LjhzOS43LDExLjIsMTYuOCw5ICAgYzE1LjctNC44LDMyLjMsNC4xLDM3LjEsMTkuOHYwLjFsNDYuMiwxNDYuOWMtMTQuNy04LjMtMzEuNi0xMy00OS42LTEzYy01MS44LDAtOTQuNiwzOS4yLTEwMC40LDg5LjRoLTg1ICAgYy02LjYtNDkuNC00OS04Ny42LTEwMC4yLTg3LjZjLTE4LjEsMC0zNS4xLDQuOC00OS44LDEzLjFsNDYuOC0xNDguOHYtMC4xYzQuOC0xNS43LDIxLjQtMjQuNiwzNy4xLTE5LjhjNy4xLDIuMiwxNC43LTEuOSwxNi44LTkgICBjMi4yLTcuMS0xLjktMTQuNy05LTE2LjhjLTI5LjktOS4xLTYxLjYsNy44LTcwLjgsMzcuN2wtNjQuNCwyMDUuM2MtMC4yLDAuNi0wLjMsMS4xLTAuNCwxLjdjLTQuNywxMS43LTcuNCwyNC41LTcuNCwzNy44ICAgYzAsNTUuNyw0NS40LDEwMS4xLDEwMS4xLDEwMS4xYzUxLjIsMCw5My42LTM4LjIsMTAwLjItODcuNmg4NS41YzcuNCw0OC41LDQ5LjQsODUuOCw5OS45LDg1LjhjNTUuNywwLDEwMS4xLTQ1LjQsMTAxLjEtMTAxLjEgICBDNDg3LjksMzIwLjYzMyw0ODUuMywzMDcuODMzLDQ4MC42LDI5Ni4xMzN6IE0xMDEuMiw0MDkuOTMzYy00MC45LDAtNzQuMS0zMy4yLTc0LjEtNzQuMXMzMy4yLTc0LjEsNzQuMS03NC4xczc0LjEsMzMuMiw3NC4xLDc0LjEgICBTMTQyLDQwOS45MzMsMTAxLjIsNDA5LjkzM3ogTTM4Ni44LDQwOC4xMzNjLTQwLjksMC03NC4xLTMzLjItNzQuMS03NC4xczMzLjMtNzQuMSw3NC4xLTc0LjFzNzQuMSwzMy4yLDc0LjEsNzQuMSAgIFM0MjcuNyw0MDguMTMzLDM4Ni44LDQwOC4xMzN6IiBmaWxsPSIjMDAwMDAwIi8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg=="), auto;
-
 }
 .main-title{
 position: absolute;
@@ -407,9 +390,7 @@ width: 15%;
 top: 15%;
 z-index: 99999;
 cursor: url("data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ4Ny44MDMgNDg3LjgwMyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDg3LjgwMyA0ODcuODAzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCI+CjxnPgoJPHBhdGggZD0iTTQ4MC42LDI5Ni4xMzNMNDE2LDkxLjAzM2MtOS4xLTI5LjktNDAuOS00Ni44LTcwLjgtMzcuN2MtNy4xLDIuMi0xMS4yLDkuNy05LDE2LjhzOS43LDExLjIsMTYuOCw5ICAgYzE1LjctNC44LDMyLjMsNC4xLDM3LjEsMTkuOHYwLjFsNDYuMiwxNDYuOWMtMTQuNy04LjMtMzEuNi0xMy00OS42LTEzYy01MS44LDAtOTQuNiwzOS4yLTEwMC40LDg5LjRoLTg1ICAgYy02LjYtNDkuNC00OS04Ny42LTEwMC4yLTg3LjZjLTE4LjEsMC0zNS4xLDQuOC00OS44LDEzLjFsNDYuOC0xNDguOHYtMC4xYzQuOC0xNS43LDIxLjQtMjQuNiwzNy4xLTE5LjhjNy4xLDIuMiwxNC43LTEuOSwxNi44LTkgICBjMi4yLTcuMS0xLjktMTQuNy05LTE2LjhjLTI5LjktOS4xLTYxLjYsNy44LTcwLjgsMzcuN2wtNjQuNCwyMDUuM2MtMC4yLDAuNi0wLjMsMS4xLTAuNCwxLjdjLTQuNywxMS43LTcuNCwyNC41LTcuNCwzNy44ICAgYzAsNTUuNyw0NS40LDEwMS4xLDEwMS4xLDEwMS4xYzUxLjIsMCw5My42LTM4LjIsMTAwLjItODcuNmg4NS41YzcuNCw0OC41LDQ5LjQsODUuOCw5OS45LDg1LjhjNTUuNywwLDEwMS4xLTQ1LjQsMTAxLjEtMTAxLjEgICBDNDg3LjksMzIwLjYzMyw0ODUuMywzMDcuODMzLDQ4MC42LDI5Ni4xMzN6IE0xMDEuMiw0MDkuOTMzYy00MC45LDAtNzQuMS0zMy4yLTc0LjEtNzQuMXMzMy4yLTc0LjEsNzQuMS03NC4xczc0LjEsMzMuMiw3NC4xLDc0LjEgICBTMTQyLDQwOS45MzMsMTAxLjIsNDA5LjkzM3ogTTM4Ni44LDQwOC4xMzNjLTQwLjksMC03NC4xLTMzLjItNzQuMS03NC4xczMzLjMtNzQuMSw3NC4xLTc0LjFzNzQuMSwzMy4yLDc0LjEsNzQuMSAgIFM0MjcuNyw0MDguMTMzLDM4Ni44LDQwOC4xMzN6IiBmaWxsPSIjMDAwMDAwIi8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg=="), auto;
-
 }
-
 /* TODO */
 .fullscreen-bg__video button{
             outline: 0;
@@ -420,7 +401,6 @@ html, body {
             height: 100%; 
             overflow: hidden
         }
-
 </style>
     </head>
 	<body>
@@ -437,7 +417,6 @@ html, body {
     <button onclick="ChangeChar()">החלף דמות</button>
 
     <script>
-
         function myFunction() {
             var txt;
             if (confirm("הפעולה תופסק האם לייצא דוח?")) {
@@ -447,7 +426,6 @@ html, body {
                 document.location.href ="/";
             }
         }
-
         function ChangeChar(){
             document.location.href ="/game/levels/boys";
         }
@@ -615,7 +593,6 @@ html, body {
                 MyImage.className="fullscreen-bg__video";
                 document.getElementById("button").className = "btn btn-primary btn-lg";
                 EnableTheAllButtons();
-
                 }, 7000);
                // MyImage.src="/Player/player_2.2.png";
                totalVid+=7;
@@ -661,7 +638,6 @@ html, body {
 	.btn-cover{
 	background-color:transparent;
     cursor: url("data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ4Ny44MDMgNDg3LjgwMyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDg3LjgwMyA0ODcuODAzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCI+CjxnPgoJPHBhdGggZD0iTTQ4MC42LDI5Ni4xMzNMNDE2LDkxLjAzM2MtOS4xLTI5LjktNDAuOS00Ni44LTcwLjgtMzcuN2MtNy4xLDIuMi0xMS4yLDkuNy05LDE2LjhzOS43LDExLjIsMTYuOCw5ICAgYzE1LjctNC44LDMyLjMsNC4xLDM3LjEsMTkuOHYwLjFsNDYuMiwxNDYuOWMtMTQuNy04LjMtMzEuNi0xMy00OS42LTEzYy01MS44LDAtOTQuNiwzOS4yLTEwMC40LDg5LjRoLTg1ICAgYy02LjYtNDkuNC00OS04Ny42LTEwMC4yLTg3LjZjLTE4LjEsMC0zNS4xLDQuOC00OS44LDEzLjFsNDYuOC0xNDguOHYtMC4xYzQuOC0xNS43LDIxLjQtMjQuNiwzNy4xLTE5LjhjNy4xLDIuMiwxNC43LTEuOSwxNi44LTkgICBjMi4yLTcuMS0xLjktMTQuNy05LTE2LjhjLTI5LjktOS4xLTYxLjYsNy44LTcwLjgsMzcuN2wtNjQuNCwyMDUuM2MtMC4yLDAuNi0wLjMsMS4xLTAuNCwxLjdjLTQuNywxMS43LTcuNCwyNC41LTcuNCwzNy44ICAgYzAsNTUuNyw0NS40LDEwMS4xLDEwMS4xLDEwMS4xYzUxLjIsMCw5My42LTM4LjIsMTAwLjItODcuNmg4NS41YzcuNCw0OC41LDQ5LjQsODUuOCw5OS45LDg1LjhjNTUuNywwLDEwMS4xLTQ1LjQsMTAxLjEtMTAxLjEgICBDNDg3LjksMzIwLjYzMyw0ODUuMywzMDcuODMzLDQ4MC42LDI5Ni4xMzN6IE0xMDEuMiw0MDkuOTMzYy00MC45LDAtNzQuMS0zMy4yLTc0LjEtNzQuMXMzMy4yLTc0LjEsNzQuMS03NC4xczc0LjEsMzMuMiw3NC4xLDc0LjEgICBTMTQyLDQwOS45MzMsMTAxLjIsNDA5LjkzM3ogTTM4Ni44LDQwOC4xMzNjLTQwLjksMC03NC4xLTMzLjItNzQuMS03NC4xczMzLjMtNzQuMSw3NC4xLTc0LjFzNzQuMSwzMy4yLDc0LjEsNzQuMSAgIFM0MjcuNyw0MDguMTMzLDM4Ni44LDQwOC4xMzN6IiBmaWxsPSIjMDAwMDAwIi8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg=="), auto;
-
 	}
 </style>
 </body></html>

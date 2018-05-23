@@ -43,6 +43,12 @@
         </style>
     </head>
 <body>
+    <button onclick="trainAgain();">תרגל שוב</button>
+    <script>
+      function trainAgain(){
+        document.location.href="/game/airplane";
+      }
+    </script>
     <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
         <div class="w3-display-topleft w3-padding-large w3-xlarge">
           <a href="/"> <!--prev-->
@@ -50,7 +56,8 @@
             </a>
               <a href="/">
                   <img border="0" src="/else/home.png" class="main-title" style="text-decoration:none;width:40px; height:40px">
-                  </a>
+              </a>
+              
           <!-- <a href="/" style="text-decoration:none;font-size: 40px;">C ME</a> -->
         </div>
 
@@ -77,12 +84,12 @@
     </div>
 
     <script>
-        var counter=0;
+        var counter = 0;
         var id;
         var elem = document.getElementById("myAnimation");
         // var elem2 = document.getElementById("myAnimation2")
         var top1 = 0;
-        var left=0;
+        var left = 0;
 
         function myFunc(){
           elem = document.getElementById("myAnimation");

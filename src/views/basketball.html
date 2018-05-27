@@ -169,18 +169,18 @@ function playAudioAgain(){
 window.onload = function(e){
 var MyAudio = document.getElementById("audio");
 document.getElementById("button").className = "hidden";
-MyAudio.src="/Voice_Memos/Player/BPlayer1.wav"; //3 seconds
+MyAudio.src="/Voice_Memos/Player/BPlayer1.mp3"; //3 seconds
 MyAudio.play();
 setTimeout(function(){
-MyAudio.src="/Voice_Memos/Player/BPlayer2.wav"; //14 seconds
+MyAudio.src="/Voice_Memos/Player/BPlayer2.mp3"; //14 seconds
 MyAudio.play();
 }, 5000);
 setTimeout(function(){
-MyAudio.src="/Voice_Memos/Player/BPlayer3.wav"; //9 seconds
+MyAudio.src="/Voice_Memos/Player/BPlayer3.mp3"; //9 seconds
 MyAudio.play();
 }, 21000);
 setTimeout(function(){
-MyAudio.src="/Voice_Memos/Player/BPlayer4.wav"; //7 seconds
+MyAudio.src="/Voice_Memos/Player/BPlayer4.mp3"; //7 seconds
 MyAudio.play();
 }, 31000);
 setTimeout(function(){
@@ -451,7 +451,7 @@ html, body {
 
      <!-- TODO: adding audio -->
      <audio id="audio" controls autoplay class="w3-right">
-            <source src="/Voice_Memos/Player/BPlayer6.wav" type="audio/wav">
+            <source src="/Voice_Memos/Player/BPlayer6.mp3" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
 
@@ -590,7 +590,7 @@ html, body {
                 DisableTheAllButtons();
                 vid.className="fullscreen-bg__video";
                 MyImage.className="hidden";
-                MyAudio.src="/Voice_Memos/Superman/Superman7.wav"; //metzujan
+                MyAudio.src="/Voice_Memos/Superman/Superman7.mp3"; //metzujan
                 MyAudio.play();
                 vid.play();
                 setTimeout(function(){
@@ -608,7 +608,7 @@ html, body {
                btn.style.height = "15%"
                btn.style.width = "9%"
                setTimeout(function(){
-                MyAudio.src="/Voice_Memos/Fireman/Fireman12.wav"; //9 seconds  
+                MyAudio.src="/Voice_Memos/Fireman/Fireman12.mp3"; //9 seconds  
                 MyAudio.play();
                 }, 8000);
                totalVid+=7;
@@ -617,7 +617,7 @@ html, body {
                 document.getElementById("button").className = "hidden";
                 vid.className="fullscreen-bg__video";
                 MyImage.className="hidden";
-                MyAudio.src="/Voice_Memos/Superman/Superman6.wav";//kol hakavod 
+                MyAudio.src="/Voice_Memos/Superman/Superman6.mp3";//kol hakavod 
                   MyAudio.play();
                 vid.src = "/Player/player_1.2.mp4";
                 vid.play();
@@ -635,7 +635,7 @@ html, body {
               btn.style.height = "15%";
               btn.style.width = "11%";
               setTimeout(function(){
-                MyAudio.src="/Voice_Memos/Fireman/Fireman12.wav"; //9 seconds  
+                MyAudio.src="/Voice_Memos/Fireman/Fireman12.mp3"; //9 seconds  
                 MyAudio.play();
                 }, 8000);
               totalVid+=5;
@@ -644,11 +644,14 @@ html, body {
                 document.getElementById("button").className = "hidden";
                 vid.className="fullscreen-bg__video";
                 MyImage.className="hidden";
-                MyAudio.src="/Voice_Memos/Superman/Superman7.wav"; //metzujan
+                MyAudio.src="/Voice_Memos/Superman/Superman7.mp3"; //metzujan
+                MyAudio.volume = 1;
                 MyAudio.play();
                 vid.src = "/Player/player_1.3.mp4";
+                vid.volume = 0.5;
                 vid.play()
-                MyAudio.src="/Voice_Memos/Player/BPlayer5.wav";
+                MyAudio.src="/Voice_Memos/Player/BPlayer5.mp3";
+                MyAudio.volume = 1;
                 MyAudio.play();
                 totalVid+=7;
                     break;

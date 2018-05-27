@@ -173,14 +173,14 @@
 window.onload = function(e){
 var MyAudio = document.getElementById("audio");
 document.getElementById("button").className = "hidden";
-MyAudio.src="/Voice_Memos/Farmer/Farmer5.wav"; //9 seconds
+MyAudio.src="/Voice_Memos/Farmer/Farmer5.mp3"; //9 seconds
 MyAudio.play();
 setTimeout(function(){
-MyAudio.src="/Voice_Memos/Farmer/Farmer6.wav"; //7 seconds
+MyAudio.src="/Voice_Memos/Farmer/Farmer6.mp3"; //7 seconds
 MyAudio.play();
 }, 10000);
 setTimeout(function(){
-MyAudio.src="/Voice_Memos/Farmer/Farmer7.wav"; //9 seconds
+MyAudio.src="/Voice_Memos/Farmer/Farmer7.mp3"; //9 seconds
 MyAudio.play();
 }, 18000);
 setTimeout(function(){
@@ -487,7 +487,7 @@ cursor: url("data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGlu
 
      <!-- TODO: adding audio -->
      <audio id="audio" controls autoplay class="w3-right">
-            <source src="/Voice_Memos/Farmer/Farman5.wav" type="audio/wav">
+            <source src="/Voice_Memos/Farmer/Farman5.mp3" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
 
@@ -651,7 +651,7 @@ cursor: url("data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGlu
                 document.getElementById("button").className = "hidden";
                 vid.className="fullscreen-bg__video";
                 MyImage.className="hidden";
-                MyAudio.src="/Voice_Memos/Superman/Superman6.wav";
+                MyAudio.src="/Voice_Memos/Superman/Superman6.mp3";
                   MyAudio.play();
                 vid.src = "/Farmer/farmer_2.2.mp4";
                 vid.play();
@@ -676,11 +676,14 @@ cursor: url("data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGlu
                 document.getElementById("button").className = "hidden";
                 vid.className="fullscreen-bg__video";
                 MyImage.className="hidden";
-                MyAudio.src="/Voice_Memos/Superman/Superman7.wav";
+                MyAudio.src="/Voice_Memos/Superman/Superman7.mp3";
+                MyAudio.volume = 1;
                 MyAudio.play();
                 vid.src = "/Farmer/farmer_2.3.mp4";
+                vid.volume = 0.5;
                 vid.play()
-                MyAudio.src="/Voice_Memos/Farmer/Farmer8.wav";
+                MyAudio.src="/Voice_Memos/Farmer/Farmer8.mp3";
+                MyAudio.volume = 1;
                 MyAudio.play();
                 totalVid+=4;
                     break;

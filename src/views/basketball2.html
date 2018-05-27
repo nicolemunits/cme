@@ -169,14 +169,14 @@ function playAudioAgain(){
 window.onload = function(e){
 var MyAudio = document.getElementById("audio");
 document.getElementById("button").className = "hidden";
-MyAudio.src="/Voice_Memos/Player/BPlayer6.wav"; //4 seconds
+MyAudio.src="/Voice_Memos/Player/BPlayer6.mp3"; //4 seconds
 MyAudio.play();
 setTimeout(function(){
-MyAudio.src="/Voice_Memos/Player/BPlayer7.wav"; //12 seconds
+MyAudio.src="/Voice_Memos/Player/BPlayer7.mp3"; //12 seconds
 MyAudio.play();
 }, 5000);
 setTimeout(function(){
-MyAudio.src="/Voice_Memos/Player/BPlayer8.wav"; //9 seconds
+MyAudio.src="/Voice_Memos/Player/BPlayer8.mp3"; //9 seconds
 MyAudio.play();
 }, 18000);
 setTimeout(function(){
@@ -447,7 +447,7 @@ html, body {
 
      <!-- TODO: adding audio -->
      <audio id="audio" controls autoplay class="w3-right">
-            <source src="/Voice_Memos/Player/BPlayer6.wav" type="audio/wav">
+            <source src="/Voice_Memos/Player/BPlayer6.mp3" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
 
@@ -602,7 +602,7 @@ html, body {
                 document.getElementById("button").className = "hidden";
                 vid.className="fullscreen-bg__video";
                 MyImage.className="hidden";
-                MyAudio.src="/Voice_Memos/Superman/Superman6.wav";
+                MyAudio.src="/Voice_Memos/Superman/Superman6.mp3";
                   MyAudio.play();
                 vid.src = "/Player/player_2.2.mp4";
                 vid.play();
@@ -618,15 +618,15 @@ html, body {
                 document.getElementById("button").className = "hidden";
                 vid.className="fullscreen-bg__video";
                 MyImage.className="hidden";
-                MyAudio.src="/Voice_Memos/Superman/Superman7.wav";
+                MyAudio.src="/Voice_Memos/Superman/Superman7.mp3";
                 MyAudio.play();
                 vid.src = "/Player/player_2.3.mp4";
                 vid.volume = 0;
                 vid.play()
-                MyAudio.src="/Voice_Memos/Player/BPlayer10.wav";
+                MyAudio.src="/Voice_Memos/Player/BPlayer10.mp3";
                 MyAudio.volume = 1;
                 MyAudio.play();
-                MyAudio.src="/Voice_Memos/Player/BPlayer11.wav";
+                MyAudio.src="/Voice_Memos/Player/BPlayer11.mp3";
                 MyAudio.play();
                 totalVid+=8;
                     break;

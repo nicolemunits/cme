@@ -173,14 +173,14 @@ function playAudioAgain(){
 window.onload = function(e){
 var MyAudio = document.getElementById("audio");
 document.getElementById("button").className = "hidden";
-MyAudio.src="/Voice_Memos/Fireman/Fireman10.wav";
+MyAudio.src="/Voice_Memos/Fireman/Fireman10.mp3";
 MyAudio.play();
 setTimeout(function(){
-MyAudio.src="/Voice_Memos/Fireman/Fireman11.wav";
+MyAudio.src="/Voice_Memos/Fireman/Fireman11.mp3";
 MyAudio.play();
 }, 10000);
 setTimeout(function(){
-MyAudio.src="/Voice_Memos/Fireman/Fireman12.wav";
+MyAudio.src="/Voice_Memos/Fireman/Fireman12.mp3";
 MyAudio.play();
 }, 24000);
 
@@ -467,7 +467,7 @@ cursor: url("data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGlu
 
      <!-- TODO: adding audio -->
      <audio id="audio" controls autoplay class="w3-right">
-            <source src="/Voice_Memos/Fireman/Fireman10.wav" type="audio/wav">
+            <source src="/Voice_Memos/Fireman/Fireman10.mp3" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
 
@@ -630,7 +630,7 @@ cursor: url("data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGlu
                 document.getElementById("button").className = "hidden";
                 vid.className="fullscreen-bg__video";
                 MyImage.className="hidden";
-                MyAudio.src="/Voice_Memos/Superman/Superman6.wav";
+                MyAudio.src="/Voice_Memos/Superman/Superman6.mp3";
                   MyAudio.play();
                 vid.src = "/Fireman/fireman_3.2.mp4";
                 vid.play();
@@ -652,13 +652,17 @@ cursor: url("data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGlu
                 document.getElementById("button").className = "hidden";
                 vid.className="fullscreen-bg__video";
                 MyImage.className="hidden";
-                MyAudio.src="/Voice_Memos/Superman/Superman7.wav";
+                MyAudio.src="/Voice_Memos/Superman/Superman7.mp3";
+                MyAudio.volume = 1;
                 MyAudio.play();
                 vid.src = "/Fireman/fireman_3.3.mp4";
+                vid.volume = 0.5;
                 vid.play()
-                MyAudio.src="/Voice_Memos/Fireman/Fireman13.wav";
+                MyAudio.src="/Voice_Memos/Fireman/Fireman13.mp3";
+                MyAudio.volume = 1;
                 MyAudio.play();
-                MyAudio.src="/Voice_Memos/Fireman/Fireman14.wav";
+                MyAudio.src="/Voice_Memos/Fireman/Fireman14.mp3";
+                MyAudio.volume = 1;
                 MyAudio.play();
                 totalVid+=10;
                     break;

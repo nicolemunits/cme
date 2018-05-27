@@ -175,15 +175,15 @@ function playAudioAgain(){
     window.onload = function(e){
         var MyAudio = document.getElementById("audio");
             document.getElementById("button").className = "hidden";
-            MyAudio.src="/Voice_Memos/Fireman/Fireman1.wav";
+            MyAudio.src="/Voice_Memos/Fireman/Fireman1.mp3";
             MyAudio.play();
             setTimeout(function(){
-            MyAudio.src="/Voice_Memos/Fireman/Fireman2.wav";
+            MyAudio.src="/Voice_Memos/Fireman/Fireman2.mp3";
             MyAudio.play();
             }, 5000);
 
             setTimeout(function(){
-            MyAudio.src="/Voice_Memos/Fireman/Fireman4.wav";
+            MyAudio.src="/Voice_Memos/Fireman/Fireman4.mp3";
             MyAudio.play();
             }, 17000);
 
@@ -484,7 +484,7 @@ cursor: url("data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGlu
 
      <!-- TODO: adding audio -->
      <audio id="audio" controls autoplay class="w3-right">
-            <source src="/Voice_Memos/Fireman/Fireman1.wav" type="audio/wav">
+            <source src="/Voice_Memos/Fireman/Fireman1.mp3" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
 
@@ -649,7 +649,7 @@ cursor: url("data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGlu
                 DisableTheAllButtons();
                 vid.className="fullscreen-bg__video";
                 MyImage.className="hidden";
-                MyAudio.src="/Voice_Memos/Superman/Superman7.wav";
+                MyAudio.src="/Voice_Memos/Superman/Superman7.mp3";
                 MyAudio.play();
                 vid.play();
                 // MyAudio.src="/Voice_Memos/Fireman/Fireman5.wav";
@@ -669,7 +669,7 @@ cursor: url("data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGlu
                 document.getElementById("button").className = "hidden";
                 vid.className="fullscreen-bg__video";
                 MyImage.className="hidden";
-                MyAudio.src="/Voice_Memos/Superman/Superman6.wav";
+                MyAudio.src="/Voice_Memos/Superman/Superman6.mp3";
                 MyAudio.play();
                 vid.src = "/Fireman/fireman_1.2.mp4";
                 vid.play();
@@ -687,11 +687,14 @@ cursor: url("data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGlu
                 document.getElementById("button").className = "hidden";
                 vid.className="fullscreen-bg__video";
                 MyImage.className="hidden";
-                MyAudio.src="/Voice_Memos/Superman/Superman7.wav";
+                MyAudio.src="/Voice_Memos/Superman/Superman7.mp3";
+                MyAudio.volume = 1;
                 MyAudio.play();
                 vid.src = "/Fireman/fireman_1.3.mp4";
+                vid.volume = 0.5;
                 vid.play()
-                MyAudio.src="/Voice_Memos/Fireman/Fireman6.wav";
+                MyAudio.src="/Voice_Memos/Fireman/Fireman6.mp3";
+                MyAudio.volume = 1;
                 MyAudio.play();
                     break;
                 default:

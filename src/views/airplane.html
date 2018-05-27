@@ -43,23 +43,20 @@
         </style>
     </head>
 <body>
+    <input type="image" onclick="Home();" src="/else/prev.png" style="text-decoration:none;width:40px; height:40px"></input>
+    <input type="image" onclick="Home();" src="/else/home.png" style="text-decoration:none;width:40px; height:40px"></input>
     <button onclick="trainAgain();">תרגל שוב</button>
+
     <script>
       function trainAgain(){
         document.location.href="/game/airplane";
       }
+      function Home(){
+        document.location.href="/"; 
+      }
     </script>
     <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-        <div class="w3-display-topleft w3-padding-large w3-xlarge">
-          <a href="/"> <!--prev-->
-            <img border="0" src="/else/prev.png" class="prev-button" style="text-decoration:none;width:40px; height:40px">
-            </a>
-              <a href="/">
-                  <img border="0" src="/else/home.png" class="main-title" style="text-decoration:none;width:40px; height:40px">
-              </a>
-              
-          <!-- <a href="/" style="text-decoration:none;font-size: 40px;">C ME</a> -->
-        </div>
+    
 
         <!-- <p>
           <button class="movingButton" onclick="myMove()"></button>
